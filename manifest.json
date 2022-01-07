@@ -1,0 +1,50 @@
+{
+    "name": "Odoo",
+    "id": "odoo",
+    "packaging_format": 1,
+    "description": {
+        "en": "All in one ERP with CRM, Warehouse inventory, Project Management, Billing & Accounting, Marketing apps..."
+    },
+    "version": "15.0.20220107~ynh1",
+    "url": "https://odoo.com",
+    "upstream": {
+        "license": "LGPL-3.0-only",
+        "website": "https://odoo.com",
+        "demo": "https://www.odoo.com/trial",
+        "admindoc": "https://www.odoo.com/documentation/15.0/administration.html",
+        "userdoc": "https://www.odoo.com/documentation/15.0/applications.html",
+        "code": "https://github.com/odoo/odoo"
+    },
+    "license": "LGPL-3.0-only",
+    "maintainer": {
+        "name": "tituspijean",
+        "email": "tituspijean@outlook.com"
+    },
+    "requirements": {
+        "yunohost": ">= 4.3.0"
+    },
+    "multi_instance": true,
+    "services": [
+        "nginx"
+    ],
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "type": "domain"
+            },
+            {
+                "name": "admin",
+                "type": "user"
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "default": true,
+                "help": {
+                    "en": "Odoo has its own login system, you may leave the app public to not add YunoHost's SSO on top of it."
+                }
+            }
+        ]
+    }
+}
